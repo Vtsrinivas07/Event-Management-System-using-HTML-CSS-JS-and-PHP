@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Confirmation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px #3867d6;
+      }
+      h1 {
+        color: green;
+        text-align: center;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      h1 i {
+        color: green;
+        font-size: 30px;
+      }
+      h2 {
+        color: #3867d6;
+        text-align: center;
+      }
+      p {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Booking Confirmed <i class="fa-regular fa-circle-check"></i></h1>
+      <h2 class="text-center">Thank you for using Echo-Events!</h2>
+      <h2>Booking Details</h2>
+      <div id="bookingDetails"></div>
+    </div>
+
+    <script>
+      function getUrlParams() {
+        const searchParams = new URLSearchParams(window.location.search);
+        const params = {};
+        for (const [key, value] of searchParams) {
+          params[key] = value;
+        }
+        return params;
+      }
+
+      const formData = getUrlParams();
+
+      const bookingDetailsDiv = document.getElementById("bookingDetails");
+      bookingDetailsDiv.innerHTML = `
+        <p><strong>Starting Date:</strong> ${formData["starting-date"]}</p>
+    <p><strong>Ending Date:</strong> ${formData["ending-date"]}</p>
+    <p><strong>Events:</strong> ${formData["events"]}</p>
+    <p><strong>No. of People:</strong> ${formData["no_of_people"]}</p>
+    <p><strong>Pricing:</strong> ${formData["pricing"]}</p>
+        `;
+    </script>
+  </body>
+</html>

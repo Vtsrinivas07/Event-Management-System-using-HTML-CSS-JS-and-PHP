@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Echo Events</title>
+    <link rel="icon" type="image/x-icon" href="img/Logo.png" />
+    <!--swiper css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!--css file-->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- header section starts  -->
+
+    <div id="bookform" style="display: none;">
+      <div class="form">
+        <i class="fa-solid fa-circle-xmark" onclick="popupclose()"></i>
+        <h2>Booking Form</h2>
+        <form id="bookingForm" action="confirmation.html" method="GET">
+          <div class="date-wrapper">
+            <input
+              type="text"
+              id="starting-date"
+              name="starting-date"
+              placeholder="Starting Date"
+            />
+            <input
+              type="text"
+              id="ending-date"
+              name="ending-date"
+              placeholder="Ending Date"
+            />
+          </div>
+          <div class="select-wrapper">
+            <select id="events" name="events">
+              <option value="" disabled selected>Events</option>
+              <option value="wedding">Wedding</option>
+              <option value="birthday">Birthday</option>
+              <option value="festival">Festival</option>
+              <option value="corporate">Corporate</option>
+              <option value="concert">Concert</option>
+              <option value="cremation">Cremation</option>
+            </select>
+            <select id="no_of_people" name="no_of_people">
+              <option value="" disabled selected>No.of People</option>
+              <option value="0-250">0-250</option>
+              <option value="250-500">250-500</option>
+              <option value="500-1000">500-1000</option>
+              <option value="1000-2000">1000-2000</option>
+            </select>
+          </div>
+          <div class="room-type-wrapper">
+            <select id="pricing" name="pricing">
+              <option value="" disabled selected>Pricing</option>
+              <option value="$299">Basic</option>
+              <option value="$599">Prime</option>
+              <option value="$1999">Luxury</option>
+              <option value="$2999">Ultra</option>
+            </select>
+          </div>
+          <button type="submit" onclick="document.location='confirmation.html'">
+            Book Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <header class="header">
+      <a href="#home" class="logo"><span>E</span>cho</a>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#service">service</a>
+        <a href="#about">about</a>
+        <a href="#gallery">Events</a>
+        <a href="#price">price</a>
+        <a href="#review">review</a>
+        <a href="#contact">contact</a>
+        <a href="index.html" class="btn" id="SignUpa">Logout</a>
+      </nav>
+
+      <div id="menu-bars" class="fas fa-bars"></div>        
+    </header>
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>
+          where your ideas take off
+          <span> Echo events </span>
+        </h3>
+        <a class="btn" onclick="booknowpopup()">BOOK NOW</a>
+      </div>
+
+      <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/home1.jpg" alt="images" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/home2.jpg" alt="images" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/home3.jpg" alt="images" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/home4.jpg" alt="images" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/home5.jpg" alt="images" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/home6.jpg" alt="images" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/home7.jpg" alt="images" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- service section starts  -->
+    <section class="service" id="service">
+      <h1 class="heading">our <span>services</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-envelope"></i>
+          <h3>invitation card design</h3>
+          <p>
+            Set the tone for your special occasion with our bespoke invitation
+            and card design service, suscipit.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-photo-video"></i>
+          <h3>photos and videos</h3>
+          <p>
+            Capture every moment, every emotion, and every smile with our
+            professional photography and videography services, suscipit.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-music"></i>
+          <h3>entertainment</h3>
+          <p>
+            Elevate your event to unforgettable heights with our exceptional
+            entertainment services, suscipit.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-car"></i>
+          <h3>event vehicles</h3>
+          <p>
+            Arrive in style and make a grand entrance with our premier event
+            vehicle services, suscipit.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>venue selection</h3>
+          <p>
+            Discover the perfect setting for your dream event with our venue
+            selection service, suscipit.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-birthday-cake"></i>
+          <h3>food catering</h3>
+          <p>
+            Savor every moment of your event with our exquisite food catering
+            service, suscipit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section starts  -->
+    <section class="about" id="about">
+      <h1 class="heading"><span>about</span> us</h1>
+
+      <div class="row">
+        <div class="image">
+          <img src="img/about.jpg" alt="images" />
+        </div>
+
+        <div class="content">
+          <h3>your occasion deserves our careful planning</h3>
+          <p>
+            Your occasion deserves our careful planning, because every detail
+            counts in crafting unforgettable moments. From the first spark of
+            inspiration to the final farewell, we orchestrate each element with
+            precision and passion,ensuring that your event surpasses every
+            expectation Let us turn your vision into reality, one meticulous
+            plan at a time, so you can relax and revel in the magic of
+            your special day.
+          </p>
+
+          <p>
+            "At our core, we believe that no detail is too small and no dream is
+            too big. Whether it's a wedding, a corporate event,or a milestone
+            celebration, we approach each project with creativity,
+            professionalism, and an unwavering dedication to exceeding.
+          </p>
+          <a href="#contact" class="btn">reach us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery section starts  -->
+    <section class="gallery" id="gallery">
+      <h1 class="heading">our <span>Events</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="img/gallery1.jpg" alt="images" />
+          <h3 class="title">Wedding Hall</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery2.jpg" alt="images" />
+          <h3 class="title">Reception</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery3.jpg" alt="images" />
+          <h3 class="title">Birthday Party</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery4.jpg" alt="images" />
+          <h3 class="title">Ferry</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery5.jpg" alt="images" />
+          <h3 class="title">Festival Event</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery6.jpg" alt="images" />
+          <h3 class="title">Sports Event</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery7.jpg" alt="images" />
+          <h3 class="title">Cremation</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery8.jpg" alt="images" />
+          <h3 class="title">Corporate Event</h3>
+        </div>
+
+        <div class="box">
+          <img src="img/gallery8.jpg" alt="images" />
+          <img src="gallery9.jpg" alt="images" />
+          <h3 class="title">Concert</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- price section starts  -->
+    <section class="price" id="price">
+      <h1 class="heading">our <span>pricing</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <h3 class="title">basic</h3>
+          <h3 class="amount">$299.00</h3>
+          <ul>
+            <li><i class="fa-solid fa-arrow-right"></i>Venue Selection</li>
+            <li><i class="fa-solid fa-arrow-right"></i> Basic Decor</li>
+            <li><i class="fa-solid fa-arrow-right"></i> Vendor Coordination</li>
+            <li><i class="fa-solid fa-arrow-right"></i> Timeline Creation</li>
+            <li>
+              <i class="fa-solid fa-arrow-right"></i> On-site Coordination
+            </li>
+          </ul>
+          <a href="form.html" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">prime</h3>
+          <h3 class="amount">$599.00</h3>
+          <ul>
+            <li><i class="fa-solid fa-arrow-right"></i> Theme Selection</li>
+            <li><i class="fa-solid fa-arrow-right"></i> Enhanced Decor</li>
+            <li><i class="fa-solid fa-arrow-right"></i> Guest Management</li>
+            <li><i class="fa-solid fa-arrow-right"></i> Audio-Visual Setup</li>
+            <li>
+              <i class="fa-solid fa-arrow-right"></i> Entertainment Arrangements
+            </li>
+          </ul>
+          <a href="form.html" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">luxury</h3>
+          <h3 class="amount">$1999.00</h3>
+          <ul>
+            <li><i class="fa-solid fa-arrow-right"></i>Event Marketing</li>
+            <li>
+              <i class="fa-solid fa-arrow-right"></i> Customized Invitations
+            </li>
+            <li><i class="fa-solid fa-arrow-right"></i> VIP Guest Handling</li>
+            <li><i class="fa-solid fa-arrow-right"></i>Premium Decor</li>
+            <li>
+              <i class="fa-solid fa-arrow-right"></i>Customized Theme Design
+            </li>
+          </ul>
+          <a href="form.html" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">ultra</h3>
+          <h3 class="amount">$2999.00</h3>
+          <ul>
+            <li>
+              <i class="fa-solid fa-arrow-right"></i> Full-Service Event
+              Planning
+            </li>
+            <li><i class="fa-solid fa-arrow-right"></i> Luxury Decor</li>
+            <li><i class="fa-solid fa-arrow-right"></i>VIP Experience</li>
+            <li>
+              <i class="fa-solid fa-arrow-right"></i> Professional
+              Photography/Videography
+            </li>
+            <li><i class="fa-solid fa-arrow-right"></i> Event Staffing</li>
+          </ul>
+          <a href="form.html" class="btn">check out</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- review section starts  -->
+    <section class="reivew" id="review">
+      <h1 class="heading">client's <span>review</span></h1>
+
+      <div class="review-slider swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+          <img src="img/gallery8.jpg" alt="images" />
+              <div class="user-info">
+                <h3>nayana</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              Thank you for the outstanding work of the Yale Conferences &
+              Events group. We had a wonderful time and could not imagine
+              pulling off our meeting without the guidance of your staff. Simply
+              put, they exceeded all our expectations and could not have been
+              more patient or harder working on the (many) requests we made of
+              them over the past few months. They are an amazing team!
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img/img2.jpg" alt="images" />
+              <div class="user-info">
+                <h3>John</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              After having an opportunity to reflect this past weekend about
+              what we all pulled off, I am “ovenr the top” in appreciation for
+              all that you have done. The accolades that we received were a
+              direct response to how smoothly, organized and well planned our
+              event was. I cannot thank the staff of Conference & Events enough
+              for their involvement.
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img/img3.jpg" alt="images" />
+              <div class="user-info">
+                <h3>Robin&Jasi</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              After having an opportunity to reflect this past weekend about
+              what we all pulled off, I am “ovenr the top” in appreciation for
+              all that you have done. The accolades that we received were a
+              direct response to how smoothly, organized and well planned our
+              event was. I cannot thank the staff of Conference & Events enough
+              for their involvement.
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img/img4.jpg" alt="images" />
+              <div class="user-info">
+                <h3>Mark</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              Thank you for your collaboration and expertise over the last
+              several months. I went i to our event with the confidence that
+              your team had the Zoom stuff under control and was able to enjoy
+              the full evening.
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="img/img5.jpg" alt="images" />
+              <div class="user-info">
+                <h3>rose</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              Thank you so much for all your help in coordinating and supporting
+              our Commencement ceremony. Arriving at Old Campus and seeing how
+              much help and support there was was an incredible feeling. I truly
+              appreciate how incredibly finely tuned these events are and having
+              you ask the right questions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section starts  -->
+    <section class="contact" id="contact">
+      <h1 class="heading"><span>contact</span> us</h1>
+      <form action="contact.php" method="post">
+        <div class="inputBox">
+          <input type="text" name="name" placeholder="name" />
+          <input type="email" name="email" placeholder="email" />
+        </div>
+        <div class="inputBox">
+          <input type="tel" name="phone" placeholder="number" />
+          <input type="text" name="subject" placeholder="subject" />
+        </div>
+        <textarea
+          name="message"
+          placeholder="message"
+          id="message"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- footer section starts  -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>branches</h3>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#home"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="#service"> <i class="fas fa-arrow-right"></i> service </a>
+          <a href="#about"> <i class="fas fa-arrow-right"></i> about </a>
+          <a href="#gallery"> <i class="fas fa-arrow-right"></i> gallery </a>
+          <a href="#price"> <i class="fas fa-arrow-right"></i> price </a>
+          <a href="#reivew"> <i class="fas fa-arrow-right"></i> reivew </a>
+          <a href="#contact"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="tel:+123-456-7890">
+            <i class="fas fa-phone"></i> +123-456-7890
+          </a>
+          <a href="tel:+123-654-8709">
+            <i class="fas fa-phone"></i> +123-654-8709
+          </a>
+          <a href="mailto:echoe99@gmail.com">
+            <i class="fas fa-envelope"></i> echoe99@gmail.com
+          </a>
+          <a href="mailto:echoevents@gmail.com">
+            <i class="fas fa-envelope"></i> echoevents@gmail.com
+          </a>
+          <a href="#">
+            <i class="fas fa-map-marker-alt"></i> bangalore, india - 560054
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+        </div>
+      </div>
+
+      <div class="credit">@2024 <span>Echo Events</span></div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--JS file-->
+    <script src="app.js"></script>
+  </body>
+</html>

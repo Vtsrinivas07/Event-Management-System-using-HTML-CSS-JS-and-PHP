@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Si-Lo2.css" />
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title-text">
+        <div class="title signup">Signup Form</div>
+    </div>
+    <div class="form-inner">
+        <form action="register.php" method="post" class="signup" onsubmit="return handleSubmit()">
+            <div class="field">
+                <input type="text" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="field">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="field">
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
+            </div>
+            <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Signup">
+            </div>
+            <div class="signup-link">Already a member? <a href="login.html">Login now</a></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function handleSubmit() {
+        alert("Sign In Successfully");
+        return true;
+    }
+</script>
+
+</body>
+</html>

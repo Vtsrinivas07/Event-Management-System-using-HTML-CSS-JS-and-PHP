@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booking Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <style>
+      .form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px #3867d6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1000;
+        margin: 50px auto;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #222;
+      }
+      .form input,
+      .form select {
+        width: 150px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .form .date-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 350px;
+      }
+      .form .select-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .form .select-wrapper select {
+        flex: 1;
+      }
+      .form .room-type-wrapper {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .form .room-type-wrapper select {
+        width: 100%;
+      }
+      .form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .form button:hover {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h2>Booking Form</h2>
+      <form id="bookingForm" action="confirmation.html" method="GET">
+        <div class="date-wrapper">
+          <input
+            type="text"
+            id="starting-date"
+            name="starting-date"
+            placeholder="Starting Date"
+          />
+          <input
+            type="text"
+            id="ending-date"
+            name="ending-date"
+            placeholder="Ending Date"
+          />
+        </div>
+        <div class="select-wrapper">
+          <select id="events" name="events">
+            <option value="" disabled selected>Events</option>
+            <option value="wedding">Wedding</option>
+            <option value="birthday">Birthday</option>
+            <option value="festival">Festival</option>
+            <option value="corporate">Corporate</option>
+            <option value="concert">Concert</option>
+            <option value="cremation">Cremation</option>
+          </select>
+          <select id="no_of_people" name="no_of_people">
+            <option value="" disabled selected>No.of People</option>
+            <option value="0-250">0-250</option>
+            <option value="250-500">250-500</option>
+            <option value="500-1000">500-1000</option>
+            <option value="1000-2000">1000-2000</option>
+          </select>
+        </div>
+        <div class="room-type-wrapper">
+          <select id="pricing" name="pricing">
+            <option value="" disabled selected>Pricing</option>
+            <option value="$299">Basic</option>
+            <option value="$599">Prime</option>
+            <option value="$1999">Luxury</option>
+            <option value="$2999">Ultra</option>
+          </select>
+        </div>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        var startingDate = document.getElementById("starting-date").value;
+        var endingDate = document.getElementById("ending-date").value;
+        var events = document.getElementById("events").value;
+        var numberOfPeople = document.getElementById("no_of_people").value;
+        var pricing = document.getElementById("pricing").value;
+        if (
+          startingDate === "" ||
+          endingDate === "" ||
+          events === "" ||
+          numberOfPeople === "" ||
+          pricing === ""
+        ) {
+          alert("Please fill in all fields");
+          return false;
+        }
+        return true;
+      }
+
+      flatpickr("#starting-date", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+      });
+
+      flatpickr("#ending-date", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+      });
+
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (event) {
+          if (!validateForm()) {
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>
